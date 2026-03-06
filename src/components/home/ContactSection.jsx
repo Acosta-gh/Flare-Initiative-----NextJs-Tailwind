@@ -5,68 +5,75 @@ import SectionHeader from "@/components/shared/SectionHeader";
 
 export default function ContactSection() {
     return (
-        <section id="contact" className="py-16 md:py-24 bg-white">
+        <section id="contact" className="py-20 md:py-28  bg-[#f8f7f5]">
             <Fade triggerOnce duration={800}>
-                <div className="container mx-auto px-6 max-w-3xl">
+                <div className="container mx-auto px-6 max-w-2xl">
                     <SectionHeader title="Contact Us" />
                     <form
                         action="https://formsubmit.co/3246edf10c677cc651cd12e80cbee4f2"
                         method="POST"
-                        className="space-y-6"
+                        className="space-y-5 mt-10"
                         aria-label="Contact form"
                     >
                         <input type="hidden" name="_captcha" value="true" />
                         <input type="hidden" name="_subject" value="New message from The Flare Initiative website" />
 
-                        <div>
-                            <label htmlFor="name" className="block text-brand-dark font-medium mb-2 font-brand">Name</label>
+                        <div className="space-y-1.5">
+                            <label htmlFor="name" className="block text-sm font-semibold text-brand-dark uppercase tracking-widest font-brand">
+                                Name
+                            </label>
                             <input
-                                type="text" id="name" name="name" placeholder="E.g. John Doe" required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange font-brand"
+                                type="text" id="name" name="name"
+                                placeholder="E.g. John Doe" required
+                                className="w-full px-0 py-3 border-0 border-b border-brand-dark/20 bg-transparent text-brand-dark placeholder:text-brand-dark/30 outline-none focus:border-brand-dark font-brand text-base transition-colors duration-200"
                             />
                         </div>
 
-                        <div>
-                            <label htmlFor="email" className="block text-brand-dark font-medium mb-2 font-brand">Email</label>
+                        <div className="space-y-1.5">
+                            <label htmlFor="email" className="block text-sm font-semibold text-brand-dark uppercase tracking-widest font-brand">
+                                Email
+                            </label>
                             <input
-                                type="email" id="email" name="email" placeholder="E.g. johndoe@mail.com" required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange font-brand"
+                                type="email" id="email" name="email"
+                                placeholder="E.g. johndoe@mail.com" required
+                                className="w-full px-0 py-3 border-0 border-b border-brand-dark/20 bg-transparent text-brand-dark placeholder:text-brand-dark/30 outline-none focus:border-brand-dark font-brand text-base transition-colors duration-200"
                             />
                         </div>
 
-                        <div>
-                            <label htmlFor="message" className="block text-brand-dark font-medium mb-2 font-brand">Message</label>
+                        <div className="space-y-1.5">
+                            <label htmlFor="message" className="block text-sm font-semibold text-brand-dark uppercase tracking-widest font-brand">
+                                Message
+                            </label>
                             <textarea
-                                id="message" name="message" rows="6"
-                                placeholder="E.g. Hello, I would like to know more about your initiative..."
+                                id="message" name="message" rows={6}
+                                placeholder="Hello, I would like to know more about your initiative..."
                                 required
-                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:border-brand-orange font-brand resize-none"
+                                className="w-full px-0 py-3 border-0 border-b border-brand-dark/20 bg-transparent text-brand-dark placeholder:text-brand-dark/30 outline-none focus:border-brand-dark font-brand text-base resize-none transition-colors duration-200"
                             />
                         </div>
 
-                        <button
-                            type="submit"
-                            className="w-full px-8 py-4 bg-brand-orange text-white rounded-xl font-medium text-lg hover:bg-brand-orange/90 cursor-pointer transition-all flex items-center justify-center gap-2 shadow-sm"
-                        >
-                            Send Message
-                            <ArrowRight className="w-5 h-5" />
-                        </button>
+                        <div className="pt-4">
+                            <button
+                                type="submit"
+                                className="w-full px-8 py-4 bg-brand-dark text-white font-semibold text-sm uppercase tracking-widest flex items-center justify-center gap-3 cursor-pointer"
+                            >
+                                Send Message
+                                <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </div>
 
-                        <div className="text-sm text-brand-dark/60 text-center font-brand space-y-2">
-                            <p>
-                                FormSubmit will open in a new tab to complete the submission. The information I receive
-                                is your message and your email address to respond to you. I do not store or share it with third parties.
-                            </p>
+                        <p className="text-xs text-brand-dark/40 text-center font-brand pt-2 leading-relaxed">
+                            Your message and email address are received to respond to your inquiry.
+                            Not stored or shared with third parties.{" "}
                             <a
                                 href="https://formsubmit.co/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-brand-orange hover:text-brand-dark transition-colors underline"
+                                className="underline underline-offset-2 text-brand-dark/50"
                             >
-                                For more information, learn about FormSubmit
-                                <ExternalLink className="w-4 h-4" />
+                                About FormSubmit
                             </a>
-                        </div>
+                        </p>
                     </form>
                 </div>
             </Fade>

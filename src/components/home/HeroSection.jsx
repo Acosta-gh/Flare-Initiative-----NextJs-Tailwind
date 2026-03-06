@@ -1,37 +1,49 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import backgroundFirefighterImage from "@/assets/images/background.jpg";
 
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen flex items-end bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `
-          linear-gradient(to bottom, rgba(24, 24, 24, 0.55), rgba(38, 43, 53, 0.65)),
-          url(${backgroundFirefighterImage.src})
-        `,
-        paddingTop: "112px",
+        backgroundImage: `url(${backgroundFirefighterImage.src})`,
       }}
     >
-      <div className="container mx-auto px-6 relative bottom-9">
-        <div className="max-w-4xl mx-auto text-center">
-          <Fade triggerOnce duration={800}>
-            <h1 className="text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-wide text-brand-white leading-[1.05] font-brand-heading">
-              The Flare Initiative
+      {/* Overlay sólido en la parte inferior, sin gradiente en el sentido estético */}
+      <div className="absolute inset-0 bg-brand-dark/60" />
+
+      {/* Línea vertical decorativa */}
+      <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center gap-3 z-10">
+        <div className="w-[1px] h-16 bg-white/20" />
+        <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-brand" style={{ writingMode: "vertical-rl" }}>
+          Est. 2026
+        </p>
+        <div className="w-[1px] h-16 bg-white/20" />
+      </div>
+
+      <div className="relative z-10 bottom-30 container mx-auto px-6 pb-20 md:pb-28 pt-40">
+        <div className="max-w-3xl">
+          <Fade triggerOnce duration={1000}>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-orange font-brand mb-6">
+              National First Responder Suicide Data Initiative
+            </p>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.0] font-brand-heading mb-6">
+              The Flare<br />Initiative
             </h1>
-            <p className="text-lg md:text-xl text-brand-white/90 leading-relaxed max-w-2xl mx-auto mt-6 font-brand">
+            <div className="w-12 h-[2px] bg-brand-orange mb-8" />
+            <p className="text-lg text-white/70 leading-relaxed max-w-xl font-brand mb-10">
               Break the silence. Shining a light on first responder suicides
               through data-driven prevention and national visibility.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-8 justify-center">
-              <a className="group px-7 py-3 rounded-xl bg-brand-orange text-brand-white cursor-pointer transition-all font-semibold flex items-center justify-center gap-2 shadow-md">
-                Join Us
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
+            <a
+              href="#about"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-brand-orange text-white font-semibold text-sm uppercase tracking-widest cursor-pointer"
+            >
+              Learn More
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </Fade>
         </div>
       </div>

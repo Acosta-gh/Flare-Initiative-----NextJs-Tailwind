@@ -1,60 +1,93 @@
 "use client";
+import { ArrowRight } from "lucide-react";
 import { Fade } from "react-awesome-reveal";
 import SectionHeader from "@/components/shared/SectionHeader";
 
 const cards = [
   {
     badge: "Partner",
-    badgeColor: "bg-brand-blue text-white",
-    borderColor: "border-brand-blue",
+    badgeColor: "bg-brand-blue/10 text-brand-blue",
+    accentBar: "bg-brand-blue",
+    bg: "bg-gray-50/50",
     title: "Build With Us",
-    description: "Collaborate on creating a secure, national suicide tracking system.",
+    description:
+      "Collaborate on creating a secure, national suicide tracking system. We're looking for research institutions, mental health organizations, and government partners.",
+    cta: "Get in Touch",
+    ctaHref: "#contact",
+    ctaStyle: "bg-brand-dark text-white hover:bg-brand-dark/85",
+    disableCta: true,
   },
   {
     badge: "Donate",
-    badgeColor: "bg-white text-brand-red",
-    bgColor: "bg-brand-red",
+    badgeColor: "bg-brand-orange/10 text-brand-orange",
+    accentBar: "bg-brand-orange",
+    bg: "bg-gray-50/50",
     title: "Support Our Mission",
-    description: "Fund the database that will drive evidence-based prevention.",
-    textColor: "text-white",
+    description:
+      "Fund the database that will drive evidence-based prevention. Every contribution helps us build the infrastructure needed to save lives.",
+    cta: "Donate Now",
+    ctaHref: "#contact",
+    ctaStyle: "bg-brand-dark text-white hover:bg-brand-dark/85",
+    disableCta: false,
   },
   {
-    badge: "Support",
-    badgeColor: "bg-brand-orange text-white",
-    borderColor: "border-brand-orange",
+    badge: "Advocate",
+    badgeColor: "bg-brand-red/10 text-brand-red",
+    accentBar: "bg-brand-red",
+    bg: "bg-gray-50/50",
     title: "Spread Awareness",
-    description: "Help bring visibility to this critical mental health issue.",
+    description:
+      "Help bring visibility to this critical mental health issue. Share our mission, host a conversation, or engage your community.",
+    cta: "Learn More",
+    ctaHref: "#about",
+    ctaStyle: "bg-brand-dark text-white hover:bg-brand-dark/85",
+    disableCta: true,
   },
 ];
 
 export default function HowYouCanHelpSection() {
   return (
-    <section id="help" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-6">
+    <section id="help" className="py-20 md:py-28 bg-gray-50">
+      <div className="container mx-auto px-6 max-w-6xl">
         <Fade triggerOnce duration={800}>
-          <SectionHeader title="How You Can Help" className="mb-16" />
+          <SectionHeader title="How You Can Help" />
+          <p className="mt-4 text-brand-dark/50 font-brand text-base max-w-xl leading-relaxed">
+            There are many ways to contribute — choose what resonates with you.
+          </p>
+          <div className="w-10 h-[2px] bg-brand-orange mt-6 mb-14" />
         </Fade>
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          <Fade direction="up" cascade damping={0.15} triggerOnce duration={800}>
-            {cards.map((card, index) => (
+
+        <div className="grid md:grid-cols-3 gap-2">
+          {cards.map((card, index) => (
+            <Fade key={index} triggerOnce duration={800} delay={index * 150}>
               <div
-                key={index}
-                className={`${card.bgColor || "bg-white"} rounded-2xl p-8 ${card.borderColor ? `border-2 ${card.borderColor}` : ""} flex flex-col`}
+                className={`${card.bg} border border-brand-dark/[0.08] flex flex-col p-8 lg:p-10 h-full`}
               >
-                <div className="mb-6">
-                  <span className={`inline-block px-4 py-1.5 ${card.badgeColor} text-sm font-bold rounded-full uppercase tracking-wide`}>
-                    {card.badge}
-                  </span>
-                </div>
-                <h3 className={`text-3xl md:text-4xl font-bold ${card.textColor || "text-brand-dark"} mb-4 font-brand-heading leading-tight`}>
+                <div className={`h-[3px] w-10 ${card.accentBar} mb-8`} />
+                <span
+                  className={`inline-block self-start px-3 py-1 text-xs font-bold rounded-full uppercase tracking-widest mb-6 ${card.badgeColor}`}
+                >
+                  {card.badge}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold font-brand-heading leading-tight mb-4 text-brand-dark">
                   {card.title}
                 </h3>
-                <p className={`${card.textColor || "text-brand-dark/70"} font-brand text-lg mb-8 flex-grow`}>
+                <p className="font-brand text-sm leading-relaxed flex-grow mb-8 text-brand-dark/60">
                   {card.description}
                 </p>
+
+                {!card.disableCta && (
+                  <a
+                    href={card.ctaHref}
+                    className={`inline-flex items-center gap-2 self-start px-6 py-3 text-xs font-semibold uppercase tracking-widest transition-colors duration-150 ${card.ctaStyle}`}
+                  >
+                    {card.cta}
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
               </div>
-            ))}
-          </Fade>
+            </Fade>
+          ))}
         </div>
       </div>
     </section>
