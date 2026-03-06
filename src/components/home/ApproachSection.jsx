@@ -10,7 +10,8 @@ const steps = [
     accentColor: "text-brand-blue",
     bgAccent: "bg-brand-blue",
     title: "Collect Data",
-    description: "Build a secure national database with historical and current information on first responder suicides across Canada.",
+    description:
+      "Build a secure national database with historical and current information on first responder suicides across Canada.",
   },
   {
     number: "02",
@@ -18,7 +19,8 @@ const steps = [
     accentColor: "text-brand-orange",
     bgAccent: "bg-brand-orange",
     title: "Make It Visible",
-    description: "Share suicide trends through transparent, trauma-informed reporting that respects those affected.",
+    description:
+      "Share suicide trends through transparent, trauma-informed reporting that respects those affected.",
   },
   {
     number: "03",
@@ -26,7 +28,8 @@ const steps = [
     accentColor: "text-brand-orange",
     bgAccent: "bg-brand-orange",
     title: "Drive Change",
-    description: "Equip organizations and governments with evidence to guide prevention programs and policy decisions.",
+    description:
+      "Equip organizations and governments with evidence to guide prevention programs and policy decisions.",
   },
   {
     number: "04",
@@ -34,7 +37,8 @@ const steps = [
     accentColor: "text-brand-red",
     bgAccent: "bg-red-500",
     title: "Long-Term Impact",
-    description: "Stronger prevention programs, national reporting standards, reduced stigma, and consistent support for families.",
+    description:
+      "Stronger prevention programs, national reporting standards, reduced stigma, and consistent support for families.",
     iconFill: true,
   },
 ];
@@ -51,12 +55,12 @@ export default function ApproachSection() {
           <div className="w-10 h-[2px] bg-brand-blue mt-6 mb-14" />
         </Fade>
 
-        <div className="bg-brand-blue/[0.04] grid grid-cols-2 lg:grid-cols-4 gap-1">
+        <div className="bg-brand-blue/[0.04] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
               <Fade key={step.number} triggerOnce duration={800} delay={i * 150}>
-                <div className="relative flex flex-col p-10 border border-brand-dark/[0.08] bg-gray-50 h-full">
+                <div className="relative flex flex-col p-8 sm:p-10 border border-brand-dark/[0.08] bg-gray-50 h-full">
                   {/* Step number — faint background text */}
                   <span
                     className="absolute top-4 right-5 text-6xl font-extrabold text-gray-500/20 font-brand-heading select-none pointer-events-none leading-none"
@@ -66,7 +70,9 @@ export default function ApproachSection() {
                   </span>
 
                   {/* Icon badge */}
-                  <div className={`w-10 h-10 flex items-center justify-center mb-6 ${step.bgAccent}/10`}>
+                  <div
+                    className={`w-10 h-10 flex items-center justify-center mb-6 ${step.bgAccent}/10`}
+                  >
                     <Icon
                       className={`w-5 h-5 ${step.accentColor} ${step.iconFill ? "fill-brand-red" : ""}`}
                       strokeWidth={1.75}
