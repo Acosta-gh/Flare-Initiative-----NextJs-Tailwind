@@ -62,13 +62,13 @@ function StatCard({ stat, index, inView }) {
 
       <div className="flex items-baseline gap-0.5 mt-2 mb-4">
         <span
-          className="text-[80px] font-black leading-none tracking-[-3px] font-brand"
+          className="text-[80px] font-black leading-none tracking-[-3px] font-brand-heading"
           style={{ color: stat.color }}
         >
           <AnimatedNumber value={stat.display} inView={inView} />
         </span>
         <span
-          className="text-[44px] font-extrabold leading-none ml-0.5 font-brand"
+          className="text-[44px] font-extrabold leading-none ml-0.5 font-brand-heading"
           style={{ color: stat.accent }}
         >
           {stat.suffix}
@@ -76,14 +76,14 @@ function StatCard({ stat, index, inView }) {
       </div>
 
       <p
-        className="text-[13px] font-bold uppercase tracking-[0.1em] mb-2"
+        className="text-[13px] font-bold uppercase tracking-[0.1em] mb-2 "
         style={{ color: stat.color }}
       >
         {stat.label}
       </p>
 
       <p
-        className="text-[13px] leading-relaxed whitespace-pre-line"
+        className="text-[13px] leading-relaxed whitespace-pre-line "
         style={{ color: BRAND.dark, opacity: 0.45 }}
       >
         {stat.sublabel}
@@ -110,14 +110,14 @@ function StatCardMobile({ stat, index, inView }) {
 
       <div className="flex items-baseline gap-0.5 min-w-[90px]">
         <span
-          className="text-[48px] font-black leading-none tracking-[-1.5px]"
-          style={{ color: stat.color, fontFamily: '"Lora", Georgia, serif' }}
+          className="text-[48px] font-black leading-none tracking-[-1.5px] font-brand-heading"
+          style={{ color: stat.color }}
         >
           <AnimatedNumber value={stat.display} inView={inView} />
         </span>
         <span
-          className="text-[26px] font-bold leading-none"
-          style={{ color: stat.accent, fontFamily: '"Lora", Georgia, serif' }}
+          className="text-[26px] font-bold leading-none font-brand-heading"
+          style={{ color: stat.accent }}
         >
           {stat.suffix}
         </span>
@@ -125,7 +125,7 @@ function StatCardMobile({ stat, index, inView }) {
 
       <div className="flex-1">
         <p
-          className="text-[13px] font-bold uppercase tracking-[0.04em] mb-1"
+          className="text-[13px] font-bold uppercase tracking-[0.04em] mb-1 "
           style={{ color: stat.color }}
         >
           {stat.label}
@@ -151,7 +151,7 @@ export default function StatsSection() {
         <div className="container mx-auto px-6 max-w-5xl mb-10">
           <SectionHeader title="A Crisis Hidden in Plain Sight" />
           <p className="mt-4 text-brand-dark/50 font-brand text-base max-w-xl leading-relaxed">
-            The numbers tell a story that has been largely invisible — until now.
+            The numbers tell a story that has   been largely invisible — until now.
           </p>
           <div className="w-10 h-[2px] bg-brand-red mt-6" />
         </div>
