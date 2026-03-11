@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-bold font-brand-heading">Quick Links</h4>
             <nav className="flex flex-col space-y-2">
-              {[["#about","About Us"],["#mission","Our Mission"],["#help","How You Can Help"],["#contact","Contact"]].map(([href, label]) => (
+              {[["#about", "About Us"], ["#mission", "Our Mission"], ["#help", "How You Can Help"], ["#contact", "Contact"]].map(([href, label]) => (
                 <a key={href} href={href} className="text-white/70 hover:text-brand-orange transition-colors font-brand">
                   {label}
                 </a>

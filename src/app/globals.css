@@ -10,14 +10,15 @@
   --color-brand-white: #ffffff;
   --color-brand-dark: #181818;
 
-  --font-brand: "Fira Sans", "Inter", sans-serif;
-  --font-brand-heading: "BBH Bogle", "Lora", serif;
+  --font-brand: var(--font-fira-sans), "Inter", sans-serif;
+  --font-brand-heading: var(--font-bbh-bogle), "Lora", serif;
 }
 
 html,
 body {
   overflow-x: hidden;
   max-width: 100vw;
+  font-family: var(--font-fira-sans), sans-serif;
 }
 
 body {
