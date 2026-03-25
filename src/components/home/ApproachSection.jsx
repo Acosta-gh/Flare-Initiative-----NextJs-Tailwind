@@ -55,7 +55,7 @@ export default function ApproachSection() {
           <div className="w-10 h-[2px] bg-brand-blue mt-6 mb-14" />
         </Fade>
 
-        <div className="bg-brand-blue/[0.04] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
