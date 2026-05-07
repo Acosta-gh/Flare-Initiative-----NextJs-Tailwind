@@ -15,20 +15,14 @@ export default function CrisisSupportSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a
-              href="tel:988"
+              href="tel:+17803871883"
               className="inline-flex items-center justify-center px-8 py-4 bg-brand-red text-white font-semibold text-sm uppercase tracking-widest min-w-[220px]"
             >
-              Call 9-8-8 — Canada
-            </a>
-            <a
-              href="tel:18334564566"
-              className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white/70 font-semibold text-sm uppercase tracking-widest min-w-[220px]"
-            >
-              First Responders
+              Call +1 780 387 1883
             </a>
           </div>
           <p className="text-white/25 text-xs font-brand mt-6 tracking-wide">
-            1-833-456-4566
+            +1 780 387 1883
           </p>
         </div>
       </div>

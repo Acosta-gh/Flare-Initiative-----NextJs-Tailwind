@@ -2,8 +2,9 @@
 import { Slide, Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import SectionHeader from "@/components/shared/SectionHeader";
-import firefighter from "@/assets/images/firefighter.png";
+import firefighter from "@/assets/images/firefighter.jpg";
 import trio from "@/assets/images/threepeople.png";
+import police from "@/assets/images/police.jpg";
 
 export default function AboutSection() {
   return (
@@ -17,17 +18,20 @@ export default function AboutSection() {
             <div className="relative w-full max-w-sm lg:max-w-none mx-auto">
               <Slide direction="left" triggerOnce duration={1200}>
                 <Image
-                  src={firefighter}
-                  alt="Firefighter"
+                  src={police}
+                  alt="Firefighter in uniform"
                   className="w-full lg:w-80 h-72 lg:h-96 object-cover border-4 border-white"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 320px"
                 />
               </Slide>
               <div className="absolute right-4 lg:right-[-28px] bottom-[-32px]">
                 <Slide direction="left" triggerOnce duration={1350}>
                   <Image
-                    src={trio}
-                    alt="First responders team"
+                    src={firefighter}
+                    alt="Team of first responders"
                     className="w-44 h-44 lg:w-52 lg:h-52 object-cover border-4 border-white"
+                    sizes="(max-width: 1024px) 100vw, 208px"
                   />
                 </Slide>
               </div>
@@ -74,7 +78,7 @@ export default function AboutSection() {
             <Fade triggerOnce duration={650}>
               <div className="border-l-2 border-brand-orange pl-6 py-1">
                 <p className="text-brand-dark font-semibold text-lg leading-snug font-brand">
-                  We're building the first national database to track first
+                  We&apos;re building the first national database to track first
                   responder suicides in Canada — creating the visibility needed
                   to drive evidence-based prevention, inform policy changes,
                   and reduce stigma around mental health.

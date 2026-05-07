@@ -18,10 +18,13 @@
     "react": "19.2.3",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "19.2.3",
-    "remotion": "^4.0.425"
+    "remotion": "^4.0.425",
+    "resend": "^6.12.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4"

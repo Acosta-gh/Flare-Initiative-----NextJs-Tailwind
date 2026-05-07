@@ -1,13 +1,18 @@
 // Header.tsx
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Hamburger from "hamburger-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [bannerHeight, setBannerHeight] = useState(36);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
-  // Mide el banner real y actualiza si cambia el tamaño de ventana
   useEffect(() => {
     const measure = () => {
       const banner = document.getElementById("crisis-banner");
@@ -18,22 +23,37 @@ export default function Header() {
     return () => window.removeEventListener("resize", measure);
   }, []);
 
-  const scrollToSection = (e, id) => {
-    e.preventDefault();
-    setIsOpen(false);
-    if (id === "/") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
+  const resolveHref = (href) => {
+    if (href.startsWith("#")) {
+      return isHome ? href : `/${href}`;
     }
-    const element = document.querySelector(id);
-    if (element) {
-      const offsetPosition = element.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    return href;
+  };
+
+  const scrollToSection = (e, id) => {
+    if (id.startsWith("#")) {
+      e.preventDefault();
+      setIsOpen(false);
+      if (!isHome) {
+        window.location.href = `/${id}`;
+      } else {
+        const element = document.querySelector(id);
+        if (element) {
+          const offsetPosition = element.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      }
+    } else if (id === "/") {
+      e.preventDefault();
+      setIsOpen(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setIsOpen(false);
     }
   };
 
   const navLinks = [
-    ["#about", "About Us"],
+    ["/about", "About Us"],
     ["#mission", "Our Mission"],
     ["#help", "How to Help"],
     ["#contact", "Contact Us"],
@@ -45,20 +65,20 @@ export default function Header() {
       style={{ top: bannerHeight }}
     >
       <div className="container mx-auto px-6 py-5 flex items-center justify-between">
-        <div className="flex-shrink-0">
-          <img src="/tree_white.svg" alt="Logo" className="h-9 md:h-10 w-auto" />
-        </div>
+        <Link href="/" className="flex-shrink-0">
+          <Image src="/tree_white.svg" alt="Flare Initiative Logo" width={36} height={36} className="h-9 md:h-10 w-auto" />
+        </Link>
 
         <nav className="hidden md:flex items-center gap-10">
           {navLinks.map(([href, label]) => (
-            <a
+            <Link
               key={href}
-              href={href}
+              href={resolveHref(href)}
               onClick={(e) => scrollToSection(e, href)}
               className="text-sm font-medium text-white/60 cursor-pointer tracking-wide transition-colors duration-150 hover:text-white"
             >
               {label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -84,21 +104,21 @@ export default function Header() {
       >
         <nav className="flex flex-col items-center justify-center h-full gap-8 text-2xl text-white font-light">
           {navLinks.map(([href, label]) => (
-            <a
+            <Link
               key={href}
-              href={href}
-              onClick={(e) => scrollToSection(e, href)}
+              href={resolveHref(href)}
+              onClick={() => setIsOpen(false)}
               className="cursor-pointer font-brand-heading font-semibold text-white/80"
             >
               {label}
-            </a>
+            </Link>
           ))}
           <div className="w-10 h-[1px] bg-white/15 my-2" />
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/30 font-brand">
-            Call 9-8-8 for help
-          </p>
+          <a href="tel:+17803871883" className="text-xs font-bold uppercase tracking-[0.25em] text-white/30 font-brand hover:text-white transition-colors">
+            Call +1 780 387 1883
+          </a>
         </nav>
-      </div >
-    </header >
+      </div>
+    </header>
   );
 }

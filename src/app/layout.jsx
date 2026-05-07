@@ -12,6 +12,7 @@ const firaSans = Fira_Sans({
   style: ['normal', 'italic'],
   variable: '--font-fira-sans',
   display: 'swap',
+  preload: true,
 });
 
 const bbhBogle = BBH_Bogle({
@@ -19,10 +20,34 @@ const bbhBogle = BBH_Bogle({
   subsets: ['latin'],
   variable: '--font-bbh-bogle',
   display: 'swap',
+  preload: true,
 });
 
 export const metadata = {
-  title: "The Flare Initiative",
+  metadataBase: new URL('https://flareinitiative.org'),
+  title: {
+    default: 'The Flare Initiative | First Responder Suicide Prevention',
+    template: '%s | The Flare Initiative'
+  },
+  description: 'Breaking the silence on first responder suicide through data-driven prevention and national visibility in Canada.',
+  keywords: ['first responder', 'suicide prevention', 'mental health', 'Canada', 'firefighter', 'police', 'EMS', 'paramedic', 'dispatcher'],
+  openGraph: {
+    title: 'The Flare Initiative | National First Responder Suicide Data Initiative',
+    description: 'Creating the visibility needed to drive evidence-based prevention, inform policy changes, and reduce stigma around mental health.',
+    url: 'https://flareinitiative.org',
+    siteName: 'The Flare Initiative',
+    locale: 'en_CA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Flare Initiative',
+    description: 'National First Responder Suicide Data Initiative - Breaking the silence through data-driven prevention.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -32,16 +57,18 @@ export default function RootLayout({ children }) {
         <meta charSet="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
       <body>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', 'G-37S5JYS2ZN');
-                    `}
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-37S5JYS2ZN');
+          `}
         </Script>
         <CrisisBanner />
         <Header />

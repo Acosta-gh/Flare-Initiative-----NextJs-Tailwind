@@ -13,13 +13,12 @@ export default function CrisisBanner() {
           {/* Desktop */}
           <span className="hidden sm:inline">
             In crisis? Call{" "}
-            <a href="tel:988" className="font-bold underline">9-8-8</a>
-            {" "}— Canada Suicide &amp; Crisis Lifeline
+            <a href="tel:+17803871883" className="font-bold underline">+1 780 387 1883</a>
           </span>
           {/* Mobile: una sola línea siempre */}
           <span className="sm:hidden">
-            Crisis line:{" "}
-            <a href="tel:988" className="font-bold underline">call 9-8-8</a>
+            Crisis:{" "}
+            <a href="tel:+17803871883" className="font-bold underline">+1 780 387 1883</a>
           </span>
         </span>
       </div>

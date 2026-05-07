@@ -14,38 +14,44 @@ const BRAND = {
 
 const stats = [
   {
-    display: 116,
-    suffix: ".7",
-    label: "Suicide Rate",
-    sublabel: "per 100k Canadian paramedics\n(2014–2015)",
+    display: 13,
+    suffix: "",
+    label: "Provinces & Territories",
+    sublabel: "A unified national scope for\nvisibility and data collection.",
     color: "#c0483a",
     accent: BRAND.red,
   },
   {
-    display: 8,
-    suffix: "×",
-    label: "Higher Risk",
-    sublabel: "compared to the general\nworking population",
+    display: 100,
+    suffix: "%",
+    label: "Dedicated Focus",
+    sublabel: "Committed entirely to first\nresponder suicide prevention.",
     color: "#243657",
     accent: BRAND.blue,
   },
   {
-    display: 24,
-    suffix: "%",
-    label: "PTSD Prevalence",
-    sublabel: "estimated rate among\nCanadian first responders",
+    display: 240,
+    suffix: "~",
+    label: "Suicides Reported",
+    sublabel: "2014–2017, word of mouth.\nIncludes military; excl. 911 dispatch.",
     color: "#b06a10",
     accent: BRAND.orange,
+    isApprox: true,
   },
 ];
 
-function AnimatedNumber({ value, inView }) {
+function AnimatedNumber({ value, inView, isApprox }) {
   const spring = useSpring(0, { stiffness: 60, damping: 20, mass: 0.8 });
   const display = useTransform(spring, (v) => Math.round(v));
 
   if (inView) spring.set(value);
 
-  return <motion.span>{display}</motion.span>;
+  return (
+    <>
+      {isApprox && <span style={{ fontSize: "0.55em", verticalAlign: "super", opacity: 0.7 }}>~</span>}
+      <motion.span>{display}</motion.span>
+    </>
+  );
 }
 
 function StatCard({ stat, index, inView }) {
@@ -65,14 +71,16 @@ function StatCard({ stat, index, inView }) {
           className="text-[80px] font-black leading-none tracking-[-3px] font-brand-heading"
           style={{ color: stat.color }}
         >
-          <AnimatedNumber value={stat.display} inView={inView} />
+          <AnimatedNumber value={stat.display} inView={inView} isApprox={stat.isApprox} />
         </span>
-        <span
-          className="text-[44px] font-extrabold leading-none ml-0.5 font-brand-heading"
-          style={{ color: stat.accent }}
-        >
-          {stat.suffix}
-        </span>
+        {!stat.isApprox && (
+          <span
+            className="text-[44px] font-extrabold leading-none ml-0.5 font-brand-heading"
+            style={{ color: stat.accent }}
+          >
+            {stat.suffix}
+          </span>
+        )}
       </div>
 
       <p
@@ -113,14 +121,16 @@ function StatCardMobile({ stat, index, inView }) {
           className="text-[48px] font-black leading-none tracking-[-1.5px] font-brand-heading"
           style={{ color: stat.color }}
         >
-          <AnimatedNumber value={stat.display} inView={inView} />
+          <AnimatedNumber value={stat.display} inView={inView} isApprox={stat.isApprox} />
         </span>
-        <span
-          className="text-[26px] font-bold leading-none font-brand-heading"
-          style={{ color: stat.accent }}
-        >
-          {stat.suffix}
-        </span>
+        {!stat.isApprox && (
+          <span
+            className="text-[26px] font-bold leading-none font-brand-heading"
+            style={{ color: stat.accent }}
+          >
+            {stat.suffix}
+          </span>
+        )}
       </div>
 
       <div className="flex-1">
@@ -158,14 +168,49 @@ export default function StatsSection() {
       </Fade>
 
       <div className="container mx-auto px-6 max-w-5xl" ref={ref}>
-        {/* Desktop */}
         <div className="hidden sm:flex flex-row w-full">
           {stats.map((stat, i) => (
             <StatCard key={i} stat={stat} index={i} inView={inView} />
           ))}
         </div>
 
-        {/* Mobile */}
+        <div className="flex sm:hidden flex-col w-full px-2">
+          {stats.map((stat, i) => (
+            <StatCardMobile key={i} stat={stat} index={i} inView={inView} />
+          ))}
+        </div>
+      </div>
+
+      <Fade triggerOnce duration={700}>
+        <div className="container mx-auto px-6 max-w-5xl mt-8">
+          <p
+            className="text-[11px] leading-relaxed font-brand"
+            style={{ color: BRAND.dark, opacity: 0.35 }}
+          >
+            * ~240 suicides reported 2014–2017 via word of mouth to the Tema Foundation (no longer tracks suicides).
+            Includes military personnel. Does not include 911 dispatchers.
+          </p>
+        </div>
+      </Fade>
+
+      {/* 
+      <Fade triggerOnce duration={800}>
+        <div className="container mx-auto px-6 max-w-5xl mb-10">
+          <SectionHeader title="A Crisis Hidden in Plain Sight" />
+          <p className="mt-4 text-brand-dark/50 font-brand text-base max-w-xl leading-relaxed">
+            The numbers tell a story that has   been largely invisible — until now.
+          </p>
+          <div className="w-10 h-[2px] bg-brand-red mt-6" />
+        </div>
+      </Fade>
+
+      <div className="container mx-auto px-6 max-w-5xl" ref={ref}>
+        <div className="hidden sm:flex flex-row w-full">
+          {stats.map((stat, i) => (
+            <StatCard key={i} stat={stat} index={i} inView={inView} />
+          ))}
+        </div>
+
         <div className="flex sm:hidden flex-col w-full px-2">
           {stats.map((stat, i) => (
             <StatCardMobile key={i} stat={stat} index={i} inView={inView} />
@@ -176,10 +221,11 @@ export default function StatsSection() {
       <Fade triggerOnce duration={600}>
         <div className="container mx-auto px-6 max-w-5xl mt-4">
           <p className="text-xs text-brand-dark/30 font-brand text-right tracking-widest uppercase">
-            Sources: Mental Health Commission of Canada
+            National Data Initiative
           </p>
         </div>
       </Fade>
+    */}
     </section>
   );
 }

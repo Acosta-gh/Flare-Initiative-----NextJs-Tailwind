@@ -4,6 +4,8 @@ import Image from "next/image";
 import SectionHeader from "@/components/shared/SectionHeader";
 import gear from "@/assets/images/gear.png";
 import trio2 from "@/assets/images/threepeople2.png";
+import medic from "@/assets/images/medic.png";
+import police2 from "@/assets/images/police2.jpg";
 
 export default function MissionSection() {
   return (
@@ -54,7 +56,7 @@ export default function MissionSection() {
             <div className="relative w-full max-w-sm lg:max-w-none mx-auto">
               <Slide direction="right" triggerOnce duration={1200}>
                 <Image
-                  src={gear}
+                  src={medic}
                   alt="First responders team"
                   className="w-full lg:w-80 h-72 lg:h-96 object-cover border-4 border-white"
                 />
@@ -62,7 +64,7 @@ export default function MissionSection() {
               <div className="absolute right-4 lg:right-[-28px] bottom-[-32px]">
                 <Slide direction="right" triggerOnce duration={1350}>
                   <Image
-                    src={trio2}
+                    src={police2}
                     alt="Firefighter portrait"
                     className="w-44 h-44 lg:w-52 lg:h-52 object-cover border-4 border-white"
                   />

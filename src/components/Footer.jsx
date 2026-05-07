@@ -30,11 +30,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a href="tel:+17803871883" className="flex items-center gap-2 text-white/70 hover:text-brand-orange transition-colors font-brand">
                 <Phone className="w-4 h-4" />
-                <span>+1 780 387 1883 <span className="text-white/50">(Canada)</span></span>
-              </a>
-              <a href="tel:18334564566" className="flex items-center gap-2 text-white/70 hover:text-brand-orange transition-colors font-brand">
-                <Phone className="w-4 h-4" />
-                First Responders: 1-833-456-4566
+                <span>+1 780 387 1883</span>
               </a>
               <p className="text-sm text-white/50 font-brand pt-2">
                 If you or someone you know is in crisis, help is available 24/7.
@@ -54,7 +50,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-6 text-center">
+      <div className="py-6 text-center space-y-2">
+        <p className="text-xs text-white/40 font-brand">
+          Photos courtesy of dansunphotos.com
+        </p>
         <a
           href="https://auroralabs.com.ar"
           target="_blank"
