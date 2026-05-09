@@ -8,7 +8,7 @@ export default function BackToHome() {
   return (
     <button
       onClick={() => router.push("/")}
-      className="text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointer"
+      className="text-brand-dark/40 hover:text-brand-dark transition-colors cursor-pointeren"
       aria-label="Back to home"
     >
 
