@@ -114,9 +114,9 @@ export default function Header() {
             </Link>
           ))}
           <div className="w-10 h-[1px] bg-white/15 my-2" />
-          <a href="tel:+17803871883" className="text-xs font-bold uppercase tracking-[0.25em] text-white/30 font-brand hover:text-white transition-colors">
-            Call +1 780 387 1883
-          </a>
+<a href="tel:988" className="text-xs font-bold uppercase tracking-[0.25em] text-white/30 font-brand hover:text-white transition-colors">
+              Call 988
+            </a>
         </nav>
       </div>
     </header>

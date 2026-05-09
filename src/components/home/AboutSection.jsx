@@ -27,13 +27,16 @@ export default function AboutSection() {
               </Slide>
               <div className="absolute right-4 lg:right-[-28px] bottom-[-32px]">
                 <Slide direction="left" triggerOnce duration={1350}>
+                  {/**  
                   <Image
                     src={firefighter}
                     alt="Team of first responders"
                     className="w-44 h-44 lg:w-52 lg:h-52 object-cover border-4 border-white"
                     sizes="(max-width: 1024px) 100vw, 208px"
                   />
+                  */}
                 </Slide>
+
               </div>
               {/* Badge */}
               <div className="hidden lg:block absolute left-[-10px] bottom-[-68px]">
@@ -80,8 +83,8 @@ export default function AboutSection() {
                 <p className="text-brand-dark font-semibold text-lg leading-snug font-brand">
                   We&apos;re building the first national database to track first
                   responder suicides in Canada — creating the visibility needed
-                  to drive evidence-based prevention, inform policy changes,
-                  and reduce stigma around mental health.
+                  to drive evidence-based prevention and reduce stigma around mental
+                  health.
                 </p>
               </div>
             </Fade>

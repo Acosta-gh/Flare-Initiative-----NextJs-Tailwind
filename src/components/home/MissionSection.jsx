@@ -26,8 +26,8 @@ export default function MissionSection() {
               <p>
                 By creating visibility on the true scale of first responder
                 suicides, the Flare Initiative will provide the evidence base
-                for effective prevention programs, inform policy changes, and
-                reduce stigma around first responder mental health.
+                for effective prevention programs and reduce stigma around first
+                responder mental health.
               </p>
             </Fade>
 
@@ -63,11 +63,13 @@ export default function MissionSection() {
               </Slide>
               <div className="absolute right-4 lg:right-[-28px] bottom-[-32px]">
                 <Slide direction="right" triggerOnce duration={1350}>
+                  {/* 
                   <Image
                     src={police2}
                     alt="Firefighter portrait"
                     className="w-44 h-44 lg:w-52 lg:h-52 object-cover border-4 border-white"
                   />
+                */}
                 </Slide>
               </div>
               {/* Badge */}
@@ -76,7 +78,7 @@ export default function MissionSection() {
                   <div className="bg-brand-red text-white px-5 py-3">
                     <p className="font-bold text-base leading-none font-brand-heading">Evidence-Based</p>
                     <p className="text-xs leading-snug mt-1 text-white/70 font-brand">
-                      Prevention & Policy Change
+                      Prevention & Awareness
                     </p>
                   </div>
                 </Fade>

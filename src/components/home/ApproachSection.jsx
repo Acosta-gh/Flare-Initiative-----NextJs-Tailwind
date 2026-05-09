@@ -29,7 +29,7 @@ const steps = [
     bgAccent: "bg-brand-orange",
     title: "Drive Change",
     description:
-      "Equip organizations and governments with evidence to guide prevention programs and policy decisions.",
+      "Equip organizations with evidence to guide prevention programs and save lives.",
   },
   {
     number: "04",

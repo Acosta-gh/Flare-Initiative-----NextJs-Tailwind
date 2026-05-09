@@ -15,15 +15,18 @@ export default function CrisisSupportSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a
-              href="tel:+17803871883"
+              href="tel:988"
               className="inline-flex items-center justify-center px-8 py-4 bg-brand-red text-white font-semibold text-sm uppercase tracking-widest min-w-[220px]"
             >
-              Call +1 780 387 1883
+              Call 988
+            </a>
+            <a
+              href="tel:18336672866"
+              className="inline-flex items-center justify-center px-8 py-4 bg-brand-orange text-brand-dark font-semibold text-sm uppercase tracking-widest min-w-[220px]"
+            >
+              1-833-677-BOOT
             </a>
           </div>
-          <p className="text-white/25 text-xs font-brand mt-6 tracking-wide">
-            +1 780 387 1883
-          </p>
         </div>
       </div>
     </section>

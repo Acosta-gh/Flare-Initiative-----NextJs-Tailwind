@@ -1,6 +1,19 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { Heart, Phone } from "lucide-react";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  const resolveHref = (href) => {
+    if (href.startsWith("#")) {
+      return isHome ? href : `/${href}`;
+    }
+    return href;
+  };
+
   return (
     <footer className="bg-brand-dark text-white">
       <div className="container mx-auto px-6 py-12 md:py-16">
@@ -18,7 +31,7 @@ export default function Footer() {
             <h4 className="text-lg font-bold font-brand-heading">Quick Links</h4>
             <nav className="flex flex-col space-y-2">
               {[["#about", "About Us"], ["#mission", "Our Mission"], ["#help", "How You Can Help"], ["#contact", "Contact"]].map(([href, label]) => (
-                <a key={href} href={href} className="text-white/70 hover:text-brand-orange transition-colors font-brand">
+                <a key={href} href={resolveHref(href)} className="text-white/70 hover:text-brand-orange transition-colors font-brand">
                   {label}
                 </a>
               ))}
@@ -28,9 +41,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-bold font-brand-heading">Crisis Support</h4>
             <div className="space-y-3">
-              <a href="tel:+17803871883" className="flex items-center gap-2 text-white/70 hover:text-brand-orange transition-colors font-brand">
+              <a href="tel:988" className="flex items-center gap-2 text-white/70 hover:text-brand-orange transition-colors font-brand">
                 <Phone className="w-4 h-4" />
-                <span>+1 780 387 1883</span>
+                <span>988</span>
               </a>
               <p className="text-sm text-white/50 font-brand pt-2">
                 If you or someone you know is in crisis, help is available 24/7.

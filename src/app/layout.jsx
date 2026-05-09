@@ -33,7 +33,7 @@ export const metadata = {
   keywords: ['first responder', 'suicide prevention', 'mental health', 'Canada', 'firefighter', 'police', 'EMS', 'paramedic', 'dispatcher'],
   openGraph: {
     title: 'The Flare Initiative | National First Responder Suicide Data Initiative',
-    description: 'Creating the visibility needed to drive evidence-based prevention, inform policy changes, and reduce stigma around mental health.',
+    description: 'Creating the visibility needed to drive evidence-based prevention and reduce stigma around mental health.',
     url: 'https://flareinitiative.org',
     siteName: 'The Flare Initiative',
     locale: 'en_CA',

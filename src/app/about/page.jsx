@@ -18,7 +18,7 @@ const values = [
   {
     icon: <Target className="w-6 h-6" />,
     title: "Precision",
-    description: "Using evidence-based data to inform policy and prevention strategies.",
+    description: "Using evidence-based data to inform prevention strategies.",
     color: "bg-brand-red/10 text-brand-red",
   },
   {
@@ -39,7 +39,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white pt-20">
       {/* Sticky Header spacer */}
-      <div className="pt-24 md:pt-32 pb-8">
+      <div className="pt-16 md:pt-24 pb-4">
         <div className="container mx-auto px-6 max-w-6xl">
           <Fade triggerOnce direction="down">
             <BackToHome />
@@ -48,7 +48,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="min-h-screen overflow-hidden">
+      <section className="pb-12 pt-16 md:pb-16 overflow-hidden">
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
           <div className="max-w-3xl">
             <Fade triggerOnce duration={800}>
@@ -110,17 +110,21 @@ export default function AboutPage() {
                     Addressing a critical gap in our national safety infrastructure.
                   </h2>
                   <p className="text-lg text-brand-dark/70 font-brand leading-relaxed">
-                    The Flare Initiative was created when a gap in our current system was identified. No one across Canada tracks first responder suicides. How can we provide the best suicide prevention programs and mental health programs when there are not statistics or data that shows what the root causes, trends, and most affected occupations are?
+                    The Flare Initiative was created after identifying a critical gap in Canada&apos;s approach to first responder mental health and suicide prevention: there is no national system dedicated to tracking first responder suicides.
                   </p>
                   <p className="text-lg text-brand-dark/70 font-brand leading-relaxed">
-                    We are creating a national first responder suicide database for this exact reason, to provide mental health organizations and first responder agencies with evidence and data to help drive and direct their mental health programs in order to give our first responders the support and resources they need to psychologically resilient and healthy.
+                    Without reliable data, it is difficult to understand the full scope of the issue, identify trends, recognize which occupations may be most affected, or ensure that mental health and suicide prevention programs are guided by evidence.
                   </p>
                   <p className="text-lg text-brand-dark/70 font-brand leading-relaxed">
-                    We are a federally incorporated nonprofit organization with volunteers across Canada working to prevent first responder suicides throughout the nation.
+                    The Flare Initiative is working to build a national first responder suicide database to help close that gap. By gathering and analyzing data, we aim to support mental health organizations, unions, agencies, and decision-makers with the evidence they need to strengthen prevention efforts and better support the psychological health and resilience of first responders.
+                  </p>
+                  <p className="text-lg text-brand-dark/70 font-brand leading-relaxed">
+                    We are a federally incorporated nonprofit organization based in Alberta, with volunteers across Canada working toward one mission: reducing first responder suicides through data-driven prevention.
                   </p>
                 </Fade>
               </div>
 
+              {/*}
               <Fade triggerOnce delay={500}>
                 <div className="bg-brand-blue/5 border-l-4 border-brand-blue p-8 rounded-r-2xl">
                   <p className="text-brand-dark font-bold text-xl leading-relaxed font-brand italic">
@@ -130,6 +134,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </Fade>
+              */}
             </div>
           </div>
         </div>
