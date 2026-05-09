@@ -73,7 +73,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="text-xs text-white/40 hover:text-white/70 transition-colors font-brand"
         >
-          Website made by <span className="font-medium">Aurora Labs</span>
+          Website made by <span className="font-medium">Aurora Labs.</span>
         </a>
       </div>
     </footer>
