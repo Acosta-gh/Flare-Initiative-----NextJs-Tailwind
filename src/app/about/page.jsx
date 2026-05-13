@@ -181,12 +181,12 @@ export default function AboutPage() {
               Join our mission to create visibility and drive systemic change for first responders across Canada.
             </p>
             <AttentionSeeker effect="pulse" triggerOnce delay={1000}>
-              <button
-                onClick={() => window.location.href = '#contact'}
+              <a
+                href="/#contact"
                 className="bg-brand-orange hover:bg-brand-orange/90 text-brand-dark font-bold px-10 py-5 rounded-full inline-flex items-center gap-3 transition-all transform hover:scale-105 shadow-xl"
               >
-                <a href="/#contact">Get Involved</a> <ArrowRight className="w-5 h-5" />
-              </button>
+                Get Involved <ArrowRight className="w-5 h-5" />
+              </a>
             </AttentionSeeker>
           </Fade>
         </div>
