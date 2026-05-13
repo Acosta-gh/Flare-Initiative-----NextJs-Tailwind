@@ -12,23 +12,19 @@ const teamMembers = [
   {
     name: "Gavin Flewelling",
     role: "President/Founder",
-    bio: "Fire Prevention Officer with Edmonton Fire Rescue Services",
     image: gavin,
   },
   {
     name: "TBD",
     role: "Coming Soon",
-    bio: "We are looking for passionate individuals to join our team.",
   },
   {
     name: "TBD",
     role: "Coming Soon",
-    bio: "We are looking for passionate individuals to join our team.",
   },
   {
     name: "TBD",
     role: "Coming Soon",
-    bio: "We are looking for passionate individuals to join our team.",
   },
 ];
 
@@ -74,9 +70,6 @@ export default function TeamSection() {
                   </h3>
                   <p className="text-sm text-brand-orange font-semibold uppercase tracking-wider mt-1">
                     {member.role}
-                  </p>
-                  <p className="text-[15px] text-brand-dark/60 font-brand mt-4 leading-relaxed line-clamp-4 group-hover:line-clamp-none transition-all duration-300">
-                    {member.bio}
                   </p>
                 </div>
               </div>
