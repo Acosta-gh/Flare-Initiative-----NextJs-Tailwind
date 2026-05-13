@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
-import firefighter from "@/assets/images/firefighter.jpg";
-import trio from "@/assets/images/threepeople.png";
-import trio2 from "@/assets/images/threepeople2.png";
-import gear from "@/assets/images/gear.png";
-import gavin from "@/assets/images/team/gavin.jpg";
+import firefighter from "@/assets/images/firefighter.webp";
+import trio from "@/assets/images/threepeople.webp";
+import trio2 from "@/assets/images/threepeople2.webp";
+import gear from "@/assets/images/gear.webp";
+import gavin from "@/assets/images/team/gavin.webp";
 
 const teamMembers = [
   {

@@ -2,9 +2,9 @@
 import { Fade, Slide, AttentionSeeker } from "react-awesome-reveal";
 import { Heart, Target, Users, Shield, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import firefighter from "@/assets/images/firefighter.jpg";
-import trio from "@/assets/images/threepeople.png";
-import police from "@/assets/images/police.jpg";
+import firefighter from "@/assets/images/firefighter.webp";
+import trio from "@/assets/images/threepeople.webp";
+import police from "@/assets/images/police.webp";
 import BackToHome from "@/components/shared/BackToHome";
 import TeamSection from "@/components/about/TeamSection";
 

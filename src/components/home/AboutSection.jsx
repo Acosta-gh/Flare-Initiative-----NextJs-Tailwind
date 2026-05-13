@@ -2,9 +2,9 @@
 import { Slide, Fade } from "react-awesome-reveal";
 import Image from "next/image";
 import SectionHeader from "@/components/shared/SectionHeader";
-import firefighter from "@/assets/images/firefighter.jpg";
-import trio from "@/assets/images/threepeople.png";
-import police from "@/assets/images/police.jpg";
+import firefighter from "@/assets/images/firefighter.webp";
+import trio from "@/assets/images/threepeople.webp";
+import police from "@/assets/images/police.webp";
 
 export default function AboutSection() {
   return (

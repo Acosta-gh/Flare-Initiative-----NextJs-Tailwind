@@ -1,7 +1,7 @@
 "use client";
 import { Fade } from "react-awesome-reveal";
 import { ArrowRight } from "lucide-react";
-import backgroundFirefighterImage from "@/assets/images/background.jpg";
+import backgroundFirefighterImage from "@/assets/images/background.webp";
 
 export default function HeroSection() {
   return (

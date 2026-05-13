@@ -2,10 +2,10 @@
 import { Fade, Slide } from "react-awesome-reveal";
 import Image from "next/image";
 import SectionHeader from "@/components/shared/SectionHeader";
-import gear from "@/assets/images/gear.png";
-import trio2 from "@/assets/images/threepeople2.png";
-import medic from "@/assets/images/medic.png";
-import police2 from "@/assets/images/police2.jpg";
+import gear from "@/assets/images/gear.webp";
+import trio2 from "@/assets/images/threepeople2.webp";
+import medic from "@/assets/images/medic.webp";
+import police2 from "@/assets/images/police2.webp";
 
 export default function MissionSection() {
   return (
