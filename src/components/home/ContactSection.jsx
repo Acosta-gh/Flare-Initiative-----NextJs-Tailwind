@@ -55,6 +55,9 @@ export default function ContactSection() {
               <p className="text-green-700">
                 Thank you for reaching out. We&apos;ll get back to you soon.
               </p>
+              <p className="text-green-600 text-sm mt-2">
+                We have sent you a confirmation email. If you don&apos;t see it, please check your spam folder.
+              </p>
               <button
                 onClick={() => setStatus("idle")}
                 className="mt-6 text-sm text-green-600 underline hover:text-green-800"
