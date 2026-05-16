@@ -45,8 +45,8 @@ export default function EventPopup() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-              className="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm"
-              onClick={handleClose}
+            className="absolute inset-0 bg-brand-dark/80 backdrop-blur-sm"
+            onClick={handleClose}
           />
 
           <motion.div
@@ -68,7 +68,7 @@ export default function EventPopup() {
               <div className="bg-gradient-to-r from-brand-red to-brand-orange px-6 py-6 pb-8">
                 <div className="w-8 h-[2px] bg-brand-white mb-3" />
                 <h2 className="font-brand-heading text-xl md:text-2xl font-bold text-brand-white mb-1">
-                  The Trevor Claydon Fundraiser
+                  Trevor's Month for First Responder Mental Health
                 </h2>
                 <p className="text-brand-white/90 text-xs md:text-sm font-medium leading-snug">
                   In memory of Trevor Claydon, an Edmonton Police Officer lost to
@@ -91,7 +91,7 @@ export default function EventPopup() {
                     </div>
                     <div>
                       <p className="font-semibold text-sm text-brand-dark">Sunday, June 14th</p>
-                      <p className="text-xs text-brand-dark/60">Tickets on sale May 14th</p>
+                      <p className="text-xs text-brand-dark/60">Free Entry — Donations Welcome</p>
                     </div>
                   </div>
 
@@ -149,14 +149,21 @@ export default function EventPopup() {
                   </p>
                 </div>
 
+                <div className="bg-brand-orange/5 border border-brand-orange/20 rounded-lg p-4">
+                  <p className="text-xs text-brand-dark/80 text-center leading-relaxed">
+                    Entry is <strong>free</strong>. If you&apos;d like to support first responder
+                    mental health, donations are gratefully accepted.
+                  </p>
+                </div>
+
                 <div className="flex flex-col sm:flex-row gap-2 justify-center items-center pt-2">
                   <a
-                    href="https://www.zeffy.com/en-CA/ticketing/the-trevor-claydon-fundraiser"
+                    href="https://www.zeffy.com/en-CA/peer-to-peer/trevors-month-for-first-responder-mental-health"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-2.5 bg-brand-blue text-brand-white font-semibold text-sm rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-center"
+                    className="px-5 py-2.5 bg-brand-orange text-brand-white font-semibold text-sm rounded-full hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-center"
                   >
-                    Get Tickets
+                    Make a Donation
                   </a>
                   <button
                     onClick={handleClose}

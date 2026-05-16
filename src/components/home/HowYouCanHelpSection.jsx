@@ -26,9 +26,10 @@ const cards = [
     description:
       "Fund the database that will drive evidence-based prevention. Every contribution helps us build the infrastructure needed to save lives.",
     cta: "Donate Now",
-    ctaHref: "#contact",
+    ctaHref: "https://www.zeffy.com/en-CA/peer-to-peer/trevors-month-for-first-responder-mental-health",
     ctaStyle: "bg-brand-dark text-white hover:bg-brand-dark/85",
     disableCta: false,
+    external: true,
   },
   {
     badge: "Advocate",
@@ -79,6 +80,8 @@ export default function HowYouCanHelpSection() {
                 {!card.disableCta && (
                   <a
                     href={card.ctaHref}
+                    target={card.external ? "_blank" : undefined}
+                    rel={card.external ? "noopener noreferrer" : undefined}
                     className={`inline-flex items-center gap-2 self-start px-6 py-3 text-xs font-semibold uppercase tracking-widest transition-colors duration-150 ${card.ctaStyle}`}
                   >
                     {card.cta}
