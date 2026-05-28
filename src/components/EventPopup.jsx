@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, Calendar, Clock, Music, Utensils, Users, Heart } from "lucide-react";
 
 const STORAGE_KEY = "trevor-claydon-popup-closed";
+const EXPIRATION_DATE = new Date("2026-06-15T23:59:59-06:00");
 
 export default function EventPopup() {
   const [mounted, setMounted] = useState(false);
@@ -12,6 +13,8 @@ export default function EventPopup() {
 
   useEffect(() => {
     setMounted(true);
+    const now = new Date();
+    if (now > EXPIRATION_DATE) return;
     const hasClosed = localStorage.getItem(STORAGE_KEY);
     if (!hasClosed) {
       setIsOpen(true);

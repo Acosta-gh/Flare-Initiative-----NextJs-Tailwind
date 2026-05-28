@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
       </head>
-      <body>
+      <body className="min-h-dvh flex flex-col">
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-37S5JYS2ZN" strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
         </Script>
         <CrisisBanner />
         <Header />
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <AccessibilityWidget />
       </body>
